@@ -7,6 +7,21 @@
           null
         ]
       },
+      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
@@ -38,25 +53,6 @@
         "branches": {
         }
       },
-      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -78,6 +74,6 @@
         }
       }
     },
-    "timestamp": 1638233500
+    "timestamp": 1638234505
   }
 }
