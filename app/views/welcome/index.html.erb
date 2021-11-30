@@ -1,10 +1,8 @@
-<h1>Viewing Party Lite</h1><br>
-
-<%= button_to 'Create a New User', new_user_path %>
+<%= button_to 'Create a New User', new_user_path, method: :get %>
 
 <div id='existing-users'>
   <p>Exisiting Users:</p>
   <% @users.each do |user| %>
-    <p><%= link_to "#{user.email}'s Dashboard" %></p>
+    <p><%= link_to "#{user.email}'s Dashboard", user_path(user) %></p>
   <% end %>
 </div>
