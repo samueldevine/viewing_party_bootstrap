@@ -53,7 +53,7 @@
         "branches": {
         }
       },
-      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/christianvalesares/mod3/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -63,7 +63,7 @@
         "branches": {
         }
       },
-      "/Users/samdevine/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/christianvalesares/mod3/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -74,6 +74,6 @@
         }
       }
     },
-    "timestamp": 1638234505
+    "timestamp": 1638239391
   }
 }
