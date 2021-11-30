@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+  end
 
   def new
     @user = User.new
@@ -10,12 +13,9 @@ class UsersController < ApplicationController
     redirect_to "/users/#{@user.id}"
   end
 
-  def show
-    user = User.find(params[:user_id])
-  end
-
   private
-    def user_params
-      params.permit(:name, :email)
-    end
+  
+  def user_params
+    params.permit(:name, :email)
+  end
 end
