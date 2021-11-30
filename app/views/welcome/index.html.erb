@@ -1,0 +1,10 @@
+<h1>Viewing Party Lite</h1><br>
+
+<%= button_to 'Create a New User', new_user_path %>
+
+<div id='existing-users'>
+  <p>Exisiting Users:</p>
+  <% @users.each do |user| %>
+    <p><%= link_to "#{user.email}'s Dashboard" %></p>
+  <% end %>
+</div>
