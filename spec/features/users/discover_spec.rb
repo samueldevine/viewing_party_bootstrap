@@ -20,7 +20,7 @@ RSpec.describe 'The Discover Page' do
   it 'has a search bar to search for specific movies' do
     visit "/users/#{sam.id}/discover"
 
-    fill_in :search, with: "fight"
+    fill_in :q, with: "fight"
     click_on "Find Movies"
 
     expect(current_path).to eq "/users/#{sam.id}/movies"

@@ -7,9 +7,9 @@ class MoviesController < ApplicationController
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results][0..19]
       render :movies
-    elsif params[:search] != ''
-      @query = params[:search]
-      response = conn.get("search/movie", { query: params[:search], api_key: ENV['movie_api_key'] })
+    elsif params[:q] != ''
+      @query = params[:q]
+      response = conn.get("search/movie", { query: @query, api_key: ENV['movie_api_key'] })
       data = JSON.parse(response.body, symbolize_names: true)
       @movies = data[:results][0..19]
       render :movies
