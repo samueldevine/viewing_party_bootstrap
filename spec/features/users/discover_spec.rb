@@ -9,12 +9,18 @@ RSpec.describe 'The Discover Page' do
     expect(page).to have_content "Discover Movies"
   end
 
-  it 'has a button to find top rated movies'
+  it 'has a button to find top rated movies' do
+    visit "/users/#{sam.id}/discover"
+
+    click_on "Find Top Rated Movies"
+
+    expect(current_path).to eq "/users/#{sam.id}/movies"
+  end
 
   it 'has a search bar to search for specific movies' do
     visit "/users/#{sam.id}/discover"
 
-    fill_in :search, with: "fight"
+    fill_in :q, with: "fight"
     click_on "Find Movies"
 
     expect(current_path).to eq "/users/#{sam.id}/movies"
