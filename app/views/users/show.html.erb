@@ -1,6 +1,6 @@
 <h3><%= @user.name %>'s Dashboard</h3>
 
-Discover Movies Button (placeholder)
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
 
 <hr>
 
