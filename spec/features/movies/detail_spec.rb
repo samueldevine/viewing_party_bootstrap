@@ -17,6 +17,7 @@ RSpec.describe 'Movie Detail Page' do
     expect(page).to have_content(22933)
     expect(page).to have_content("Edward Norton as The Narrator")
     expect(page).to_not have_content("David Jean Thomas as Policeman")
+    expect(page).to have_content("Brett Pascoe: In my top 5 of all time favourite movies")
   end
 
   xit 'can create a viewing party' do
@@ -32,9 +33,3 @@ end
 #  Button to create a viewing party
 #  Button to return to the Discover Page
 # Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
-#
-# And I should see the following information about the movie:
-
-#  List the first 10 cast members (characters&actress/actors)
-#  Each review's author and information
-# Details: This information should come from 3 different endpoints from The Movie DB API

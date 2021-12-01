@@ -10,4 +10,9 @@ Castmembers: <% @cast_list.map do |member| %> <br>
   <%= member[:name] %> as
   <%= member[:character] %>
 <% end %> <br>
-Total Reviews: <%= @movie[:vote_count] %>
+Total Reviews: <%= @movie[:vote_count] %> <br>
+Reviews: <br>
+<% @reviews.map do |review| %> <br><br>
+  <%= review[:author] %>:
+  <%= review[:content] %>
+<% end %>

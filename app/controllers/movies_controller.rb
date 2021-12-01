@@ -37,6 +37,10 @@ class MoviesController < ApplicationController
     response2 = conn.get("movie/550/credits", { api_key: ENV['movie_api_key']})
     data = JSON.parse(response2.body, symbolize_names: true)
     @cast_list = data[:cast][0..9]
+
+    response3 = conn.get("movie/550/reviews", { api_key: ENV['movie_api_key']})
+    data = JSON.parse(response3.body, symbolize_names: true)
+    @reviews = data[:results]
   end
 
 end
