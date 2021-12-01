@@ -24,19 +24,19 @@ RSpec.describe 'Movie Detail Page' do
     response = Faraday.get("https://api.themoviedb.org/3/movie/550?api_key=53eaa818ee059d1f9370d4b96b85d585")
     movie = JSON.parse(response.body, symbolize_names: true)
     visit "/users/#{linda.id}/movies/#{movie[:id]}"
-    
+
     click_button "Create Viewing Party"
 
-    expect(current_path). to eq("/users/#{linda.id}/movies/#{movie[:id]}/viewing-party/new")
+    expect(current_path).to eq("/users/#{linda.id}/movies/#{movie[:id]}/viewing-party/new")
   end
 
-  xit 'links back to the discover page' do
+  it 'links back to the discover page' do
+    response = Faraday.get("https://api.themoviedb.org/3/movie/550?api_key=53eaa818ee059d1f9370d4b96b85d585")
+    movie = JSON.parse(response.body, symbolize_names: true)
+    visit "/users/#{linda.id}/movies/#{movie[:id]}"
+
+    click_button "Back to Discover Movies"
+
+    expect(current_path).to eq("/users/#{linda.id}/discover")
   end
 end
-
-# When I visit a movie's detail page (/users/:user_id/movies/:movie_id where :id is a valid user id,
-# I should see
-#
-#  Button to create a viewing party
-#  Button to return to the Discover Page
-# Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
