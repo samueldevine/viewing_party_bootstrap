@@ -20,7 +20,14 @@ RSpec.describe 'Movie Detail Page' do
     expect(page).to have_content("Brett Pascoe: In my top 5 of all time favourite movies")
   end
 
-  xit 'can create a viewing party' do
+  it 'can create a viewing party' do
+    response = Faraday.get("https://api.themoviedb.org/3/movie/550?api_key=53eaa818ee059d1f9370d4b96b85d585")
+    movie = JSON.parse(response.body, symbolize_names: true)
+    visit "/users/#{linda.id}/movies/#{movie[:id]}"
+    save_and_open_page
+    click_button "Create Viewing Party"
+
+    expect(current_path). to eq("/users/#{linda.id}/movies/#{movie[:id]}/viewing-party/new")
   end
 
   xit 'links back to the discover page' do

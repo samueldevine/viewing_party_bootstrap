@@ -1,4 +1,7 @@
-<h3>Title: <%= @movie[:title] %> </h3><br>
+<h3>Title: <%= @movie[:title] %> </h3>
+
+<%= button_to "Create Viewing Party", "/users/#{params[:id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %> <br>
+
 Vote Average: <%= @movie[:vote_average] %> <br>
 Runtime in hours: <%= (@movie[:runtime].to_f/60).round(2) %> <br>
 Genre(s):
