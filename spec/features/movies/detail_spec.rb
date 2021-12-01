@@ -8,13 +8,15 @@ RSpec.describe 'Movie Detail Page' do
     movie = JSON.parse(response.body, symbolize_names: true)
     #start on linda search page
     visit "/users/#{linda.id}/movies/#{movie[:id]}"
-    
+
     expect(page).to have_content("Fight Club")
     expect(page).to have_content(8.4)
     expect(page).to have_content("Runtime in hours: 2.32")
     expect(page).to have_content("Drama")
     expect(page).to have_content("A ticking-time-bomb")
     expect(page).to have_content(22933)
+    expect(page).to have_content("Edward Norton as The Narrator")
+    expect(page).to_not have_content("David Jean Thomas as Policeman")
   end
 
   xit 'can create a viewing party' do

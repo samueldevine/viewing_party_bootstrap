@@ -6,5 +6,8 @@ Genre(s):
   <%= v[:name] %> <br>
 <% end %>
 Summary: <%= @movie[:overview] %> <br>
-Castmembers: Placeholder <br>
+Castmembers: <% @cast_list.map do |member| %> <br>
+  <%= member[:name] %> as
+  <%= member[:character] %>
+<% end %> <br>
 Total Reviews: <%= @movie[:vote_count] %>
