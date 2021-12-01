@@ -8,7 +8,6 @@ RSpec.describe 'Top Rated Movies' do
       visit "/users/#{bob.id}/discover"
 
       click_button 'Find Top Rated Movies'
-      save_and_open_page
 
       expect(page.status_code).to eq 200
       expect(page).to have_content('The Godfather')

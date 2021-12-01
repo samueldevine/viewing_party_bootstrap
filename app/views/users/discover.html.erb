@@ -2,7 +2,8 @@
 
 <%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies", params: { q: 'top_rated' }, method: :get %>
 
-<%= form_with url: "/users/#{@user.id}/movies", local: true do |form| %>
+<%# defaults to a post %>
+<%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
   <%= form.label :search, 'Search by Movie Title:' %>
   <%= form.text_field :search %>
   <%= form.submit 'Find Movies' %>
