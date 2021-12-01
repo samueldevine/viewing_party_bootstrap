@@ -18,7 +18,6 @@ RSpec.describe 'The Discover Page' do
     click_on "Find Movies"
 
     expect(current_path).to eq "/users/#{sam.id}/movies"
-    save_and_open_page
     expect(page).to have_content "fight"
   end
 end
