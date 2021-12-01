@@ -11,6 +11,16 @@ class MoviesController < ApplicationController
     render :movies
   end
 
+  def top_rated
+    conn = Faraday.new(url: "https://api.themoviedb.org/3")
+    response = conn.get("movie/top_rated", { api_key: ENV['movie_api_key']})
+
+    data = JSON.parse(response.body, symbolize_names: true)
+    @movies = data[:results][0..19]
+
+    render :movies
+  end
+
   def movies
   end
 end
