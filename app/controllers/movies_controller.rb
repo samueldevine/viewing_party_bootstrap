@@ -1,17 +1,16 @@
 class MoviesController < ApplicationController
   def search
-    conn = Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
-      # faraday.headers["api_key"] = ENV['movie_api_key']
-    end
-    # response = conn.get("/search/movie", { 'api_key': ENV['movie_api_key'] })
-    response = conn.get("/search/movie", { query: params[:search], api_key: ENV['movie_api_key'] })
-    binding.pry
+    @query = params[:search]
+
+    conn = Faraday.new(url: "https://api.themoviedb.org/3")
+    response = conn.get("search/movie", { query: params[:search], api_key: ENV['movie_api_key'] })
+
     data = JSON.parse(response.body, symbolize_names: true)
+    @movies = data[:results][0..19]
 
-    @movies = data[0..19]
+    render :movies
+  end
 
-    # found_movies = movies.find_all {|m| m[:title] == params[:search]}
-    # movies = found_movies.first
-    # render "welcome/index"
+  def movies
   end
 end

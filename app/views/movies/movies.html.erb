@@ -1,0 +1,9 @@
+<h3>Movie results for: <%= @query %></h3>
+
+PLACEHOLDER FOR DISCOVER PAGE BUTTON
+
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <p><%= movie[:title] %>, Vote Average: <%= movie[:vote_average] %></p>
+  <% end %>
+<% end %>
