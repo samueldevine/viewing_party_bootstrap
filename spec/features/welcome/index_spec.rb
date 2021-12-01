@@ -7,7 +7,7 @@ RSpec.describe 'The Landing Page' do
     expect(page).to have_button 'Create a New User'
     click_on 'Create a New User'
 
-    expect(current_path).to eq "/users/new"
+    expect(current_path).to eq "/register"
   end
 
   it 'lists all current users' do
