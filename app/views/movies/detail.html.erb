@@ -1,2 +1,10 @@
-<%= @movie[:title] %> <br>
-<%= @movie[:vote_average] %> <br>
+<h3>Title: <%= @movie[:title] %> </h3><br>
+Vote Average: <%= @movie[:vote_average] %> <br>
+Runtime in hours: <%= (@movie[:runtime].to_f/60).round(2) %> <br>
+Genre(s):
+<% @movie[:genres].map do |v| %>
+  <%= v[:name] %> <br>
+<% end %>
+Summary: <%= @movie[:overview] %> <br>
+Castmembers: Placeholder <br>
+Total Reviews: <%= @movie[:vote_count] %>

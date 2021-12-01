@@ -6,13 +6,15 @@ RSpec.describe 'Movie Detail Page' do
   it 'shows a movie and its attributes' do
     response = Faraday.get("https://api.themoviedb.org/3/movie/550?api_key=53eaa818ee059d1f9370d4b96b85d585")
     movie = JSON.parse(response.body, symbolize_names: true)
-    #start on linda search page 
+    #start on linda search page
     visit "/users/#{linda.id}/movies/#{movie[:id]}"
-
-    expect(page).to have_content(movie[:title])
-    expect(page).to have_content(movie[:vote_average])
-    expect(page).to have_content(movie[:vote_average])
-
+    
+    expect(page).to have_content("Fight Club")
+    expect(page).to have_content(8.4)
+    expect(page).to have_content("Runtime in hours: 2.32")
+    expect(page).to have_content("Drama")
+    expect(page).to have_content("A ticking-time-bomb")
+    expect(page).to have_content(22933)
   end
 
   xit 'can create a viewing party' do
@@ -30,13 +32,7 @@ end
 # Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
 #
 # And I should see the following information about the movie:
-#
-#  Movie Title
-#  Vote Average of the movie
-#  Runtime in hours & minutes
-#  Genre(s) associated to movie
-#  Summary description
+
 #  List the first 10 cast members (characters&actress/actors)
-#  Count of total reviews
 #  Each review's author and information
 # Details: This information should come from 3 different endpoints from The Movie DB API
