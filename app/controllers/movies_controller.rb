@@ -29,4 +29,10 @@ class MoviesController < ApplicationController
   def movies
   end
 
+  def detail
+    conn = Faraday.new(url: "https://api.themoviedb.org/3")
+    response = conn.get("movie/550?", { api_key: ENV['movie_api_key']})
+    @movie = JSON.parse(response.body, symbolize_names: true)
+  end
+
 end

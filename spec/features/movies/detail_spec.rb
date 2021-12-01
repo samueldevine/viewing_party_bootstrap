@@ -1,15 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Detail Page' do
-  let(:bob) { User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com') }
+  let(:linda) { User.create!(name: 'Linda Belcher', email: 'lbelcher@yahoo.com') }
 
   it 'shows a movie and its attributes' do
     response = Faraday.get("https://api.themoviedb.org/3/movie/550?api_key=53eaa818ee059d1f9370d4b96b85d585")
     movie = JSON.parse(response.body, symbolize_names: true)
-  
-    visit "/users/#{bob.id}/movies/#{movie[:id]}"
+    #start on linda search page 
+    visit "/users/#{linda.id}/movies/#{movie[:id]}"
 
-    expect(page).to have_content('Fight Club')
+    expect(page).to have_content(movie[:title])
+    expect(page).to have_content(movie[:vote_average])
+    expect(page).to have_content(movie[:vote_average])
 
   end
 
