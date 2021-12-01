@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/movies', to: 'movies#top_rated'
   post '/users/:id/movies', to: 'movies#search'
+
+  get '/users/:id/movies/:movie_id', to: 'movies#detail'
+
+  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
 end
