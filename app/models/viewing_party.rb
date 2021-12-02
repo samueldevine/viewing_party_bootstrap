@@ -18,4 +18,9 @@ class ViewingParty < ApplicationRecord
   validates :date, presence: true
   validates :start_time, presence: true
   # validates_with DurationValidator
+
+  def self.find_by_user(user_id)
+    self.joins(:user_parties)
+    .where(user_parties: { user_id: user_id })
+  end
 end
