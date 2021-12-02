@@ -3,6 +3,7 @@ Type of Pull Request
 - [ ] New feature or functionality
 - [ ] Bugfix
 - [ ] Documentation change or update
+- [ ] Refactor
 
 Description of changes
 ----------------------
