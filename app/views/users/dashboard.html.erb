@@ -1,0 +1,22 @@
+<h3><%= @user.name %>'s Dashboard</h3>
+
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+
+<hr>
+
+<div id='viewing-parties'>
+<h3>Viewing Parties</h3>
+<% if @party_details %>
+  <% @party_details.each do |party| %>
+    <img src=<%= party[1].poster_path %>><br>
+    <%= party[1].title %><br>
+    <%= party[0].date %><br>
+    <%= party[0].start_time %><br>
+    <% if party[0].host_id == @user.id %>
+      Hosting
+    <% else %>
+      Invited
+    <% end %>
+  <% end %>
+<% end %>
+</div>

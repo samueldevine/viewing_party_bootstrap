@@ -3,6 +3,6 @@
 <div id='existing-users'>
   <p>Exisiting Users:</p>
   <% @users.each do |user| %>
-    <p><%= link_to "#{user.email}'s Dashboard", user_path(user) %></p>
+    <p><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %></p>
   <% end %>
 </div>
