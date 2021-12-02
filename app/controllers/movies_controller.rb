@@ -1,17 +1,12 @@
 class MoviesController < ApplicationController
   def search
-    conn = Faraday.new(url: "https://api.themoviedb.org/3")
-
+    facade = MovieFacade.new
     if params[:search] == 'top_rated'
-      response = conn.get("movie/top_rated", { api_key: ENV['movie_api_key']})
-      data = JSON.parse(response.body, symbolize_names: true)
-      @movies = data[:results][0..19]
+      @movies = facade.top_rated.all
       render :movies
     elsif params[:q] != ''
       @query = params[:q]
-      response = conn.get("search/movie", { query: @query, api_key: ENV['movie_api_key'] })
-      data = JSON.parse(response.body, symbolize_names: true)
-      @movies = data[:results][0..19]
+      @movies = facade.search(@query).all
       render :movies
     else
       @user = User.find(params[:id])
