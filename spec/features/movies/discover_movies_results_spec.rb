@@ -69,8 +69,7 @@ RSpec.describe 'Discover Movies Results' do
     # this test may fail if someone ever makes another movie called 'fight club'
     # and capybara finds an ambiguous match (two links with the same name)
     it 'each title links to the movies show page' do
-      facade = MovieFacade.new
-      movie = facade.search('fight club').all.first
+      movie = MovieFacade.search('fight club').all.first
       visit "/users/#{bob.id}/discover"
       fill_in :q, with: "#{movie.title}"
       click_button 'Find Movies'

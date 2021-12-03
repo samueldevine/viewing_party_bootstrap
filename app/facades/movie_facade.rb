@@ -1,15 +1,16 @@
 class MovieFacade
+  class << self
 
   def top_rated
-    MovieRepo.new(service.top_rated)
+    MovieRepo.new(MovieService.top_rated)
   end
 
   def search(query)
-    MovieRepo.new(service.search(query))
+    MovieRepo.new(MovieService.search(query))
   end
 
   def movie_details(movie_id)
-    Movie.new(service.movie_details(movie_id))
+    Movie.new(MovieService.movie_details(movie_id))
   end
 
   def cast_list
@@ -28,4 +29,5 @@ class MovieFacade
   def service
     MovieService.new
   end
+end
 end

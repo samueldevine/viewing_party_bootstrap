@@ -1,4 +1,5 @@
 class MovieService
+  class << self
   def get_url(url, params)
     parse_data(conn.get(url, params))
   end
@@ -32,4 +33,5 @@ class MovieService
   def parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+end
 end
