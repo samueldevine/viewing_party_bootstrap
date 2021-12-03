@@ -4,8 +4,6 @@ class ViewingPartiesController < ApplicationController
     @users = User.all
     facade = MovieFacade.new
     @movie = facade.movie_details(params[:movie_id])
-
-    #redirect to users dashboard
   end
 
   def create
@@ -17,6 +15,12 @@ class ViewingPartiesController < ApplicationController
       duration: params[:duration]
       )
 
-      binding.pry
+    params[:invitations].each do |inv|
+      if inv[1] == "1"
+        viewing_party.users << User.find(inv[0])
+      end
+    end
+
+    redirect_to "/users/#{params[:id]}"
   end
 end
