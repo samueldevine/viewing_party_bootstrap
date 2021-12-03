@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ce4b35590464ed34415a13badd946ebb.cloudfront.net (CloudFront)
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - la551j6MryrgDVUFIIDQaTBVyr5hxM0iB2b5RdRTU-Lf1BXMANz4Yw==
+      - XuIcQlLY145nOEK1LvKo9WZ5rqjB4LtFm6JgBsiuIuImbjzD6jL9wQ==
       Age:
-      - '10206'
+      - '10566'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -75,7 +75,7 @@ http_interactions:
         Linson Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":22943}'
-  recorded_at: Fri, 03 Dec 2021 19:09:00 GMT
+  recorded_at: Fri, 03 Dec 2021 19:15:00 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/551?api_key=HIDE MY KEY
@@ -128,13 +128,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6c02603f677dd5669f8ab3b41062340f.cloudfront.net (CloudFront)
+      - 1.1 28d79637e27f11e3ab19a9515e273a5b.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 2YaWaz4jsufWaOvcymQnI1htinVRmYRKylU8u4EKQ22WoMPzZpoazQ==
+      - r-YSkx3_WzsRml_D2j9GWrH6l9LsRpLtY_o6Rdi0hwExSKGdyeb24w==
       Age:
-      - '10203'
+      - '10563'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/wMNs0x98yGMjJJ2cGjiR9luINqF.jpg","belongs_to_collection":{"id":372257,"name":"The
@@ -145,5 +145,67 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-12-13","revenue":84563118,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Hell,
         Upside Down","title":"The Poseidon Adventure","video":false,"vote_average":7.2,"vote_count":604}'
-  recorded_at: Fri, 03 Dec 2021 19:09:00 GMT
+  recorded_at: Fri, 03 Dec 2021 19:15:00 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/552?api_key=HIDE MY KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 03 Dec 2021 19:15:00 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b859303efe2cd314721ed8fc1e9d3c1f6b81de11
+      X-Memc-Age:
+      - '480'
+      X-Memc-Expires:
+      - '14663'
+      Etag:
+      - W/"b72672917b7a11fabb769ee6bebef2a8"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 9c7e5857d78c5dc89042979317de5843.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - PtqbPU3N4IvzMq8VcXYFvOCAQNCHcdm68cvplX_SbRUd2CA9VBHo5Q==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvazRKSUh5QVhhR0h3QXdUN3k1U2tkMTdmMFdsLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MzUsIm5hbWUiOiJDb21lZHkifSx7ImlkIjoxMDc0OSwibmFtZSI6IlJvbWFuY2UifV0sImhvbWVwYWdlIjoiIiwiaWQiOjU1MiwiaW1kYl9pZCI6InR0MDIzNzUzOSIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiaXQiLCJvcmlnaW5hbF90aXRsZSI6IlBhbmUgZSB0dWxpcGFuaSIsIm92ZXJ2aWV3IjoiQW4gZW5kZWFyaW5nIGxpZ2h0IGNvbWVkeSBhYm91dCBhIHdvbWFuIHdobyBzcG9udGFuZW91c2x5IGJlY29tZXMgYSByZXNpZGVudCBvZiBWZW5pY2UgYWZ0ZXIgaGVyIGZhbWlseSBsZWZ0IGhlciBiZWdpbi4gV2hpbGUgZW5qb3lpbmcgdGhlIHdvbmRlcmZ1bCBwZW9wbGUgc2hlIG1lZXRzIHNoZSBhY2hpZXZlcyBhIG5ldyBsaWZlIGFuZCB0aGUgZmlyc3QgdGltZSBpbmRlcGVuZGVudCBvZiBoZXIgZmFtaWx5LiIsInBvcHVsYXJpdHkiOjUuOTE2LCJwb3N0ZXJfcGF0aCI6Ii92ejBUSGszdVBtWWlwMlU3NjFVcUIyRDBoUmwuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjozMTcsImxvZ29fcGF0aCI6Ii9ISmowSjlUazZBR2NMcEw0TzdtSTNic2NjTS5wbmciLCJuYW1lIjoiSXN0aXR1dG8gTHVjZSBDaW5lY2l0dMOgIiwib3JpZ2luX2NvdW50cnkiOiJJVCJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJGUiIsIm5hbWUiOiJGcmFuY2UifSx7Imlzb18zMTY2XzEiOiJJVCIsIm5hbWUiOiJJdGFseSJ9LHsiaXNvXzMxNjZfMSI6IkNIIiwibmFtZSI6IlN3aXR6ZXJsYW5kIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDAwLTAzLTAzIiwicmV2ZW51ZSI6ODQ3ODQzNCwicnVudGltZSI6MTE0LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJJdGFsaWFuIiwiaXNvXzYzOV8xIjoiaXQiLCJuYW1lIjoiSXRhbGlhbm8ifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IkltYWdpbmUgeW91ciBsaWZlLiBOb3cgZ28gbGl2ZSBpdC4iLCJ0aXRsZSI6IkJyZWFkIGFuZCBUdWxpcHMiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny4zLCJ2b3RlX2NvdW50IjoxOTR9
+  recorded_at: Fri, 03 Dec 2021 19:15:00 GMT
 recorded_with: VCR 6.0.0

@@ -56,5 +56,24 @@ RSpec.describe MovieFacade do
         expect(reviews.first).to be_a Review
       end
     end
+
+    describe '::party_details' do
+      it 'returns an array of arrays, each containing a viewing party and the movie details for that partys movie', :vcr do
+        bob = User.create!(name: 'Bob Belcher', email: 'bburger@yahoo.com')
+        linda = User.create!(name: 'Linda Belcher', email: 'lbecher@yahoo.com')
+        party_1 = bob.viewing_parties.create!(movie_id: 550, host_id: bob.id, start_time: '18:00', date: '2022-Jan-01')
+        party_2 = bob.viewing_parties.create!(movie_id: 551, host_id: bob.id, start_time: '12:00', date: '2021-Dec-16')
+        party_3 = linda.viewing_parties.create!(movie_id: 552, host_id: linda.id, start_time: '13:00', date: '2021-Dec-17')
+        party_4 = linda.viewing_parties.create!(movie_id: 553, host_id: linda.id, start_time: '14:00', date: '2021-Dec-18')
+        party_3.users << bob
+
+        party_details = MovieFacade.party_details([party_1, party_2, party_3])
+
+        expect(party_details).to be_an Array
+        expect(party_details.first).to be_an Array
+        expect(party_details.first[0]).to be_a ViewingParty
+        expect(party_details.first[1]).to be_a Movie
+      end
+    end
   end
 end

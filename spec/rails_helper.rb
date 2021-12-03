@@ -70,7 +70,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('HIDE MY KEY') { ENV['movie_api_key'] }
   config.configure_rspec_metadata!
-  config.default_cassette_options = { re_record_interval: 5.seconds }
+  config.default_cassette_options = { re_record_interval: 7.days }
 end
 
 Shoulda::Matchers.configure do |config|

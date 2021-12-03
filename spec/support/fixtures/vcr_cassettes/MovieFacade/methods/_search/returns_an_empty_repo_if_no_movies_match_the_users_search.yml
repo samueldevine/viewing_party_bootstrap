@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 03 Dec 2021 18:36:35 GMT
+      - Fri, 03 Dec 2021 19:06:39 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
+      - 1.1 c55bfc9d9a95cdee8e23989feddaa4b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - zNf0ijM2dBtvmntuxLDGwfMEFixRDrl536wz5of2bug_clWNIv4dZg==
+      - i4_wKmLXvUIb132UZ2WRERh5t5_czPDIJ36XC3gilzz1Gvkp47XB4A==
       Age:
-      - '591'
+      - '139'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Fri, 03 Dec 2021 18:46:26 GMT
+  recorded_at: Fri, 03 Dec 2021 19:08:58 GMT
 recorded_with: VCR 6.0.0
