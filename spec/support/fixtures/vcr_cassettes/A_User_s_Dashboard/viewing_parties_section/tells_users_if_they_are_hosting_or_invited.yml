@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - nZmEjSvZyiYxs_sDzpP6zjZyCB7aVAhkYa6vQileq-Sit6Brsy4kXw==
+      - XC2xjVTDbHS4v1Essby7DQTfRExsiJh2Zj8n-_v19ZrCUzwnNgvL5A==
       Age:
-      - '7051'
+      - '8854'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -75,7 +75,7 @@ http_interactions:
         Linson Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":22943}'
-  recorded_at: Fri, 03 Dec 2021 18:16:25 GMT
+  recorded_at: Fri, 03 Dec 2021 18:46:28 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/551?api_key=HIDE MY KEY
@@ -128,13 +128,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c3.cloudfront.net (CloudFront)
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e7.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - B7zmnTP9XfTZIlRKapZOvM9jEhHPJjbgb0DSHO-fA_sJ9ezoc30tMA==
+      - ZNaf3FZ2nmQR7nih7aqpHW0CWKNvkeWbOcgPeDHPCx0Mtih8UqQZJg==
       Age:
-      - '7048'
+      - '8851'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/wMNs0x98yGMjJJ2cGjiR9luINqF.jpg","belongs_to_collection":{"id":372257,"name":"The
@@ -145,5 +145,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-12-13","revenue":84563118,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Hell,
         Upside Down","title":"The Poseidon Adventure","video":false,"vote_average":7.2,"vote_count":604}'
-  recorded_at: Fri, 03 Dec 2021 18:16:25 GMT
+  recorded_at: Fri, 03 Dec 2021 18:46:28 GMT
 recorded_with: VCR 6.0.0

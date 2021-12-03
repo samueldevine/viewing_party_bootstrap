@@ -17,17 +17,13 @@ class MoviesController < ApplicationController
   end
 
   def detail
-    conn = Faraday.new(url: "https://api.themoviedb.org/3")
-    response = conn.get("movie/#{params[:movie_id]}?", { api_key: ENV['movie_api_key']})
-    @movie = JSON.parse(response.body, symbolize_names: true)
+    # @movie_details #==> [@movie, @cast_list, @reviews]
 
-    response2 = conn.get("movie/#{params[:movie_id]}/credits", { api_key: ENV['movie_api_key']})
-    data = JSON.parse(response2.body, symbolize_names: true)
-    @cast_list = data[:cast][0..9]
+    @movie = MovieFacade.movie_details(params[:movie_id])
 
-    response3 = conn.get("movie/#{params[:movie_id]}/reviews", { api_key: ENV['movie_api_key']})
-    data = JSON.parse(response3.body, symbolize_names: true)
-    @reviews = data[:results]
+    @cast_list = MovieFacade.cast_list(params[:movie_id])
+
+    @reviews = MovieFacade.reviews(params[:movie_id])
   end
 
 end

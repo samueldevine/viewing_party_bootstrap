@@ -13,10 +13,16 @@ class MovieFacade
     Movie.new(MovieService.movie_details(movie_id))
   end
 
-  def cast_list
+  def cast_list(movie_id)
+    MovieService.cast_list(movie_id)[:cast].map do |member_data|
+      CastMember.new(member_data)
+    end[0..9]
   end
 
-  def reviews
+  def reviews(movie_id)
+    MovieService.reviews(movie_id)[:results].map do |review_data|
+      Review.new(review_data)
+    end
   end
 
   def party_details(viewing_parties)

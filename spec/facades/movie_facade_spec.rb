@@ -37,5 +37,24 @@ RSpec.describe MovieFacade do
         expect(movie).to be_a Movie
       end
     end
+
+    describe '::cast_list' do
+      it 'returns an array of up to 10 cast members', :vcr do
+        cast_list = MovieFacade.cast_list(550)
+
+        expect(cast_list).to be_an Array
+        expect(cast_list.size).to eq 10
+        expect(cast_list.first).to be_a CastMember
+      end
+    end
+
+    describe '::reviews' do
+      it 'returns an array of reviews', :vcr do
+        reviews = MovieFacade.reviews(550)
+
+        expect(reviews).to be_an Array
+        expect(reviews.first).to be_a Review
+      end
+    end
   end
 end
