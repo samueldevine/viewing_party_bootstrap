@@ -1,5 +1,6 @@
 class Movie
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :genres,
               :overview,
               :vote_count,
@@ -8,6 +9,7 @@ class Movie
               :poster_path
 
   def initialize(info)
+    @id = info[:id]
     @title = info[:title]
     @genres = info[:genres]
     @overview = info[:overview]
