@@ -5,7 +5,7 @@ RSpec.describe 'Discover Movies Results' do
 
   describe 'movie search' do
     describe 'happy path' do
-      it 'allows users to search for a movie by title' do
+      it 'allows users to search for a movie by title', :vcr do
         visit "/users/#{bob.id}/discover"
 
         fill_in :q, with: 'national treasure'
@@ -16,7 +16,7 @@ RSpec.describe 'Discover Movies Results' do
         expect(page).to have_content('Vote Average:', count: 11)
       end
 
-      it 'only displays up to 20 movies' do
+      it 'only displays up to 20 movies', :vcr do
         visit "/users/#{bob.id}/discover"
 
         fill_in :q, with: 'fight'
@@ -42,7 +42,7 @@ RSpec.describe 'Discover Movies Results' do
 
   describe 'top rated movies' do
     describe 'happy path' do
-      it 'allows users to find the top 20 movies by rating' do
+      it 'allows users to find the top 20 movies by rating', :vcr do
         visit "/users/#{bob.id}/discover"
 
         click_button 'Find Top Rated Movies'
@@ -55,7 +55,7 @@ RSpec.describe 'Discover Movies Results' do
   end
 
   describe 'Discover Page button' do
-    it 'routes users back to the discover page' do
+    it 'routes users back to the discover page', :vcr do
       visit "/users/#{bob.id}/discover"
       click_button 'Find Top Rated Movies'
       click_button 'Discover Page'
@@ -68,9 +68,8 @@ RSpec.describe 'Discover Movies Results' do
   describe 'results' do
     # this test may fail if someone ever makes another movie called 'fight club'
     # and capybara finds an ambiguous match (two links with the same name)
-    it 'each title links to the movies show page' do
-      facade = MovieFacade.new
-      movie = facade.search('fight club').all.first
+    it 'each title links to the movies show page', :vcr do
+      movie = MovieFacade.search('fight club').all.first
       visit "/users/#{bob.id}/discover"
       fill_in :q, with: "#{movie.title}"
       click_button 'Find Movies'
