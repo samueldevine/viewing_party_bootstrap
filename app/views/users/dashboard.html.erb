@@ -8,15 +8,22 @@
 <h3>Viewing Parties</h3>
 <% if @party_details %>
   <% @party_details.each do |party| %>
-    <img src=<%= party[1].poster_path %>><br>
-    <%= party[1].title %><br>
-    <%= party[0].date %><br>
-    <%= party[0].start_time %><br>
+    <div id='party-<%= party[0].id %>' style='text-align: center'>
+
+    <img src='https://image.tmdb.org/t/p/original/<%= party[1].poster_path %>'
+    style='width: 200px'><br>
+    <%= link_to party[1].title, "/users/#{@user.id}/movies/#{party[0].movie_id}" %><br>
+    <%= party[0].date.strftime('%B %d, %Y') %><br>
+    <%= party[0].start_time.strftime('%l:%M %p') %><br>
     <% if party[0].host_id == @user.id %>
       Hosting
     <% else %>
       Invited
     <% end %>
+
+    </div>
   <% end %>
+<% else %>
+No viewing parties yet. Host a party to get started!
 <% end %>
 </div>

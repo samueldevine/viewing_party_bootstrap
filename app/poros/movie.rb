@@ -4,8 +4,9 @@ class Movie
               :overview,
               :vote_count,
               :vote_average,
-              :runtime
-              
+              :runtime,
+              :poster_path
+
   def initialize(info)
     @title = info[:title]
     @genres = info[:genres]
@@ -13,5 +14,6 @@ class Movie
     @vote_count = info[:vote_count]
     @vote_average = info[:vote_average]
     @runtime = info[:runtime]
+    @poster_path = info[:poster_path]
   end
 end
