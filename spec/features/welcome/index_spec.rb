@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'The Landing Page' do
   it 'has a button to create a new user' do
-    visit '/'
+    visit root_path
 
     expect(page).to have_button 'Create a New User'
     click_on 'Create a New User'
@@ -11,22 +11,22 @@ RSpec.describe 'The Landing Page' do
   end
 
   it 'lists all current users' do
-    sam = User.create!(name: 'Sam D.', email: 'sam@sam.com')
-    visit '/'
+    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com')
+    visit root_path
 
     within '#existing-users' do
-      expect(page).to have_content(sam.email)
+      expect(page).to have_content(bob.email)
     end
   end
 
   it 'links to each users dashboard' do
-    sam = User.create(name: 'Sam D.', email: 'sam@sam.com')
-    visit '/'
+    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com')
+    visit root_path
 
     within '#existing-users' do
-      click_on "sam@sam.com's Dashboard"
+      click_on 'bburger@yahoo.com'
     end
 
-    expect(current_path).to eq "/users/#{sam.id}"
+    expect(current_path).to eq "/users/#{bob.id}"
   end
 end

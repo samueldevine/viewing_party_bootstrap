@@ -10,11 +10,11 @@ RSpec.describe 'Movie Detail Page' do
     visit "/users/#{linda.id}/movies/#{movie[:id]}"
 
     expect(page).to have_content("Fight Club")
-    expect(page).to have_content(8.4)
+    expect(page).to have_content(movie[:vote_average])
     expect(page).to have_content("Runtime in hours: 2.32")
     expect(page).to have_content("Drama")
     expect(page).to have_content("A ticking-time-bomb")
-    expect(page).to have_content(22933)
+    expect(page).to have_content(movie[:vote_count])
     expect(page).to have_content("Edward Norton as The Narrator")
     expect(page).to_not have_content("David Jean Thomas as Policeman")
     expect(page).to have_content("Brett Pascoe: In my top 5 of all time favourite movies")
