@@ -25,9 +25,5 @@ class MovieFacade
     end
   end
 
-  private
-  def service
-    MovieService.new
   end
-end
 end

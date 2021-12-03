@@ -33,7 +33,7 @@ RSpec.describe "A User's Dashboard" do
       end
     end
 
-    it 'displays an image and information for each of the users parties' do
+    it 'displays an image and information for each of the users parties', :vcr do
       party_1 = bob.viewing_parties.create!(movie_id: 550, host_id: bob.id, start_time: '18:00', date: '2022-Jan-01')
       visit "/users/#{bob.id}"
 
@@ -47,7 +47,7 @@ RSpec.describe "A User's Dashboard" do
       end
     end
 
-    it 'tells users if they are hosting or invited' do
+    it 'tells users if they are hosting or invited', :vcr do
       linda = User.create!(name: 'Linda Belcher', email: 'dancingmom@yahoo.com')
       party_1 = bob.viewing_parties.create!(movie_id: 550, host_id: bob.id, start_time: '18:00', date: '2022-Jan-01')
       party_1.users << linda

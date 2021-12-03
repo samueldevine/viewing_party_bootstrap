@@ -1,5 +1,6 @@
 class MovieService
   class << self
+
   def get_url(url, params)
     parse_data(conn.get(url, params))
   end
@@ -9,8 +10,7 @@ class MovieService
   end
 
   def search(query)
-    @query = query
-    @movies = get_url("search/movie", { query: @query, api_key: ENV['movie_api_key']})
+    @movies = get_url("search/movie", { query: query, api_key: ENV['movie_api_key']})
   end
 
   def movie_details(movie_id)
@@ -25,7 +25,6 @@ class MovieService
     @reviews = get_url("movie/#{movie_id}/reviews", { api_key: ENV['movie_api_key']})
   end
 
-  private
   def conn
     Faraday.new(url: "https://api.themoviedb.org/3")
   end
@@ -33,5 +32,6 @@ class MovieService
   def parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
-end
+
+  end
 end
