@@ -1,9 +1,9 @@
 <h3>Movie results for: <%= @query %></h3>
 
-PLACEHOLDER FOR DISCOVER PAGE BUTTON
+<%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %>
 
 <% if @movies %>
   <% @movies.each do |movie| %>
-    <p><%= movie.title %>, Vote Average: <%= movie.vote_average %></p>
+    <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>, Vote Average: <%= movie.vote_average %></p>
   <% end %>
 <% end %>

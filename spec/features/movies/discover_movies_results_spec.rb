@@ -53,4 +53,31 @@ RSpec.describe 'Discover Movies Results' do
       end
     end
   end
+
+  describe 'Discover Page button' do
+    it 'routes users back to the discover page' do
+      visit "/users/#{bob.id}/discover"
+      click_button 'Find Top Rated Movies'
+      click_button 'Discover Page'
+
+      expect(page.status_code).to eq 200
+      expect(current_path).to eq "/users/#{bob.id}/discover"
+    end
+  end
+
+  describe 'results' do
+    # this test may fail if someone ever makes another movie called 'fight club'
+    # and capybara finds an ambiguous match (two links with the same name)
+    it 'each title links to the movies show page' do
+      facade = MovieFacade.new
+      movie = facade.search('fight club').all.first
+      visit "/users/#{bob.id}/discover"
+      fill_in :q, with: "#{movie.title}"
+      click_button 'Find Movies'
+      click_link "#{movie.title}"
+
+      expect(current_path).to eq "/users/#{bob.id}/movies/#{movie.id}"
+      expect(page.status_code).to eq 200
+    end
+  end
 end

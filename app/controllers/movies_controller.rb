@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def search
+    @user = User.find(params[:id])
     facade = MovieFacade.new
     if params[:search] == 'top_rated'
       @movies = facade.top_rated.all
@@ -9,7 +10,6 @@ class MoviesController < ApplicationController
       @movies = facade.search(@query).all
       render :movies
     else
-      @user = User.find(params[:id])
       render 'users/discover'
     end
   end
