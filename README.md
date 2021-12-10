@@ -1,6 +1,6 @@
 ## About this Project
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
 ## DB Schema
 
