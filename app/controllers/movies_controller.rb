@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
     if params[:search] == 'top_rated'
       @movies = MovieFacade.top_rated.all
+      @query = 'Top Rated Movies'
       render :movies
     elsif params[:q] != ''
       @query = params[:q]

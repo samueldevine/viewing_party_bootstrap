@@ -1,9 +1,30 @@
-<h3>Discover Movies</h3>
+<div class="container-fluid text-center">
+  <h3>Discover Movies</h3>
 
-<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies", params: { search: 'top_rated' }, method: :get %>
+  <div class="row mb-3">
+    <div class="col">
+      <div class="form-actions">
+        <%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies", params: { search: 'top_rated' }, method: :get %>
+      </div>
+    </div>
+  </div>
 
-<%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
-  <%= form.label :q, 'Search by Movie Title:' %>
-  <%= form.text_field :q %>
-  <%= form.submit 'Find Movies' %>
-<% end %>
+  <b>OR</b>
+
+  <div class="row mt-3">
+    <div class="col">
+      <%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
+        <div class="control-group">
+          <%= form.label :q, 'Search by Movie Title:', class: "control-label" %>
+          <div class="controls">
+            <%= form.text_field :q %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <%= form.submit 'Find Movies' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

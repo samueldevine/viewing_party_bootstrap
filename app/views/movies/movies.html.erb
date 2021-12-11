@@ -1,9 +1,27 @@
-<h3>Movie results for: <%= @query %></h3>
+<div class="container-fluid">
+  <div class="text-center">
+    <h3>Movie results for: <%= @query %></h3>
+  </div>
 
-<%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %>
+  <div class="row mb-3">
+    <div class="col text-center">
+      <div class="form-actions">
+        <%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %>
+      </div>
+    </div>
+  </div>
 
-<% if @movies %>
-  <% @movies.each do |movie| %>
-    <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>, Vote Average: <%= movie.vote_average %></p>
+  <% if @movies %>
+    <% @movies.each do |movie| %>
+      <div class="row">
+        <div class="col text-end">
+          <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
+        </div>
+
+        <div class="col text-left">
+          Vote Average: <%= movie.vote_average %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
