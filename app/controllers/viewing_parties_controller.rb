@@ -1,7 +1,7 @@
 class ViewingPartiesController < ApplicationController
   def new
     @user = User.find(params[:id])
-    @users = User.all
+    @users = User.where.not(id: @user.id)
     @movie = MovieFacade.movie_details(params[:movie_id])
   end
 
@@ -9,7 +9,7 @@ class ViewingPartiesController < ApplicationController
     if params[:duration] < params[:runtime]
       flash[:notice] = "Please choose a duration longer than the movie's runtime."
       @user = User.find(params[:id])
-      @users = User.all
+      @users = User.where.not(id: @user.id)
       @movie = MovieFacade.movie_details(params[:movie_id])
       render :new
     else
@@ -19,7 +19,9 @@ class ViewingPartiesController < ApplicationController
         date: params[:date],
         start_time: params[:start_time],
         duration: params[:duration]
-        )
+      )
+
+      viewing_party.users << User.find(params[:id])
 
       params[:invitations].each do |inv|
         if inv[1] == "1"
