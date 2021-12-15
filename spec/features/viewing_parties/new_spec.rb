@@ -12,7 +12,7 @@ RSpec.describe 'New Viewing Party' do
       movie = MovieFacade.movie_details(550)
       visit "/users/#{@linda.id}/movies/#{movie.id}/viewing-party/new"
 
-      expect(page).to have_content("Create a Movie Party for #{movie.title}")
+      expect(page).to have_content("Create a Viewing Party for #{movie.title}")
     end
 
     it 'has a form to create viewing party', :vcr do
@@ -22,7 +22,6 @@ RSpec.describe 'New Viewing Party' do
       fill_in "duration", with: movie.runtime
       fill_in "date", with: "06/12/2022"
       fill_in "start_time", with: "12:00"
-      check "[invitations][#{@linda.id}]"
       check "[invitations][#{@bob.id}]"
       click_button "Create Party"
 
@@ -55,7 +54,6 @@ RSpec.describe 'New Viewing Party' do
       fill_in "duration", with: (movie.runtime - 5)
       fill_in "date", with: "06/12/2022"
       fill_in "start_time", with: "12:00"
-      check "[invitations][#{@linda.id}]"
       check "[invitations][#{@bob.id}]"
       click_button "Create Party"
 
