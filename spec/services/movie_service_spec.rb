@@ -19,7 +19,9 @@ RSpec.describe MovieService do
         expect(response).to be_a Hash
       end
     end
+  end
 
+  describe 'endpoint methods' do
     describe '::top_rated', :vcr do
       it 'returns a hash of the top rated movies' do
         top_rated = MovieService.top_rated
