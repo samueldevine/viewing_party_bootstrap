@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   get '/register', to: 'users#new'
+  get '/login', to: 'users#login'
+  post '/login', to: 'users#login_check'
+
   get '/users/:id', to: 'users#dashboard'
   get '/users/:id/discover', to: 'users#discover'
 

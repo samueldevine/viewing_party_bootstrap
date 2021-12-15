@@ -1,4 +1,18 @@
 class UsersController < ApplicationController
+  def login
+  end
+
+  def login_check
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      flash[:success] = 'Successfully logged in'
+      redirect_to "/users/#{user.id}"
+    else
+      flash[:warning] = 'Invalid username or password'
+      redirect_to '/login'
+    end
+  end
+
   def dashboard
     @user = User.find(params[:id])
     viewing_parties = ViewingParty.find_by_user(@user)
