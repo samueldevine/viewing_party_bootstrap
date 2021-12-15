@@ -1,10 +1,13 @@
-<%= button_to 'Create a New User', '/register', method: :get %>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-6 text-center p-5 bg-secondary'>
+      Existing Users:
+      <%= button_to 'Log In', '/login', method: :get %>
+    </div>
 
-<%= button_to 'Log In', '/login', method: :get %>
-
-<div id='existing-users'>
-  <p>Exisiting Users:</p>
-  <% @users.each do |user| %>
-    <p><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %></p>
-  <% end %>
+    <div class='col-md-6 text-center p-5 bg-light'>
+      New to Viewing Party?
+      <%= button_to 'Create an account', '/register', method: :get %>
+    </div>
+  </div>
 </div>

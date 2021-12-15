@@ -1,7 +1,17 @@
-<%= form_with url: "/login", method: :post, local: true do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log In" %>
-<% end %>
+<div class='container-fluid'>
+  <%= form_with url: "/login", method: :post, local: true do |f| %>
+    <div class='form-group'>
+      <%= f.label :email, class: 'col-sm-4 control-label' %>
+      <div class='col-sm-6'>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= f.label :password, class: 'col-sm-4 control-label' %>
+      <div class='col-sm-6'>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+    </div>
+    <%= f.submit "Log In" %>
+  <% end %>
+</div>

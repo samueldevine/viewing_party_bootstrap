@@ -1,5 +1,6 @@
 {
   "name": "viewing_party_lite",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+  }
 }

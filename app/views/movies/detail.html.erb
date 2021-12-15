@@ -1,22 +1,49 @@
-<h3>Title: <%= @movie.title %> </h3>
+<div class='container-fluid'>
+  <div class='row text-center'>
+    <h3>Title: <%= @movie.title %> </h3>
+  </div>
 
-<%= button_to "Create Viewing Party", "/users/#{params[:id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %> <br>
-<%= button_to "Back to Discover Movies", "/users/#{params[:id]}/discover", method: :get %> <br>
+  <div class='row text-center'>
+    <div class='col-4'>
+      Average Rating: <%= @movie.vote_average %> / 10
+    </div>
+    <div class='col-4'>
+      Runtime in hours: <%= (@movie.runtime.to_f/60).round(2) %>
+    </div>
+    <div class='col-4'>
+      Genre(s):
+      <% @movie.genres.map do |genre| %>
+        <%= genre[:name] %>
+      <% end %>
+    </div>
+  </div>
 
-Vote Average: <%= @movie.vote_average %> <br>
-Runtime in hours: <%= (@movie.runtime.to_f/60).round(2) %> <br>
-Genre(s):
-<% @movie.genres.map do |genre| %>
-  <%= genre[:name] %> <br>
-<% end %>
-Summary: <%= @movie.overview %> <br>
-Castmembers: <% @cast_list.map do |member| %> <br>
-  <%= member.name %> as
-  <%= member.character %>
-<% end %> <br>
-Total Reviews: <%= @movie.vote_count %> <br>
-Reviews: <br>
-<% @reviews.map do |review| %> <br><br>
-  <%= review.author %>:
-  <%= review.content %>
-<% end %>
+  <div class='row text-center p-3'>
+    <%= button_to "Create Viewing Party", "/users/#{params[:id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
+  </div>
+
+  <div class='row py-2'>
+    <h5>Summary</h5>
+    <p class="text-justify"><%= @movie.overview %></p>
+  </div>
+
+  <div class='row py-2'>
+    <h5>Castmembers</h5>
+    <% @cast_list.map do |member| %> <br>
+      <div class='col-md-auto'><p><%= member.name %> as
+      <%= member.character %></p></div>
+    <% end %>
+  </div>
+
+  <div class='row py-2'>
+    <h5>Reviews (<%= @movie.vote_count %> total)</h5>
+
+    <% @reviews.map do |review| %> <br><br>
+      <p><b><%= review.author %></b>: <%= review.content %></p>
+    <% end %>
+  </div>
+
+  <div class='row text-center'>
+    <%= button_to "Back to Discover Movies", "/users/#{params[:id]}/discover", method: :get %>
+  </div>
+</div>

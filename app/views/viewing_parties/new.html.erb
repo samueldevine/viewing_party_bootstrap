@@ -1,19 +1,39 @@
-<h3> Create a Movie Party for <%= @movie.title %> </h3>
+<div class='container-fluid'>
+  <div class='row text-center'>
+    <h3>Create a Viewing Party for <%= @movie.title %></h3>
+  </div>
 
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-party", method: :post, local: true do |f| %>
-  <%= f.label "duration(minutes)" %>
-  <%= f.number_field "duration", value: @movie.runtime%>
-  <%= f.hidden_field  :runtime, value: @movie.runtime %>
-  <%= f.label "date" %>
-  <%= f.date_field "date" %>
-  <%= f.label "start_time" %>
-  <%= f.time_field "start_time" %>
+  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-party", method: :post, local: true do |f| %>
+    <div class='form-group'>
+      <%= f.label "duration (minutes):", class: 'col-sm-4' %>
+      <div class='col-sm-8'>
+        <%= f.number_field :duration, value: @movie.runtime, class: 'form-control' %>
+      </div>
+      <%= f.hidden_field  :runtime, value: @movie.runtime %>
+    </div>
+    <div class='form-group'>
+      <%= f.label "date", class: 'col-sm-4' %>
+      <div class='col-sm-8'>
+        <%= f.date_field "date", class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= f.label "start_time", class: 'col-sm-4' %>
+      <div class='col-sm-8'>
+        <%= f.time_field "start_time", class: 'form-control' %>
+      </div>
+    </div>
 
-  <%= f.fields_for :invitations do |inv| %>
-    <% @users.each do |user| %>
-      <%= inv.label "Add #{user.name}" %>
-      <%= inv.check_box "#{user.id}" %>
+    <%= f.fields_for :invitations do |inv| %>
+    <div class='row'>
+      <% @users.each do |user| %>
+        <div class='col-sm-3 text-center'>
+          <%= inv.label "Add #{user.name}" %>
+          <%= inv.check_box "#{user.id}" %>
+        </div>
+      <% end %>
+    </div>
     <% end %>
+    <%= f.submit "Create Party" %>
   <% end %>
-  <%= f.submit "Create Party" %>
-<% end %>
+</div>
