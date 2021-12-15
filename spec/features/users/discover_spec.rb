@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'The Discover Page' do
-  let(:sam) { User.create(name: 'Sam', email: 'sam@sam.com') }
+  let(:sam) { User.create(name: 'Sam', email: 'sam@sam.com', password: 'test123', password_confirmation: 'test123') }
 
   it 'displays the users name' do
     visit "/users/#{sam.id}/discover"

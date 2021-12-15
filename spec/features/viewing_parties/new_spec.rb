@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party' do
   before :each do
-    @linda = User.create!(name: 'Linda Belcher', email: 'lbelcher@yahoo.com')
-    @bob = User.create!(name: 'Bob Belcher', email: 'bburger@yahoo.com')
-    @gene = User.create!(name: 'Gene Belcher', email: 'gbelcher@yahoo.com')
+    @linda = User.create!(name: 'Linda Belcher', email: 'lbelcher@yahoo.com', password: 'dancemom', password_confirmation: 'dancemom')
+    @bob = User.create!(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger')
+    @gene = User.create!(name: 'Gene Belcher', email: 'gbelcher@yahoo.com', password: 'burger2', password_confirmation: 'burger2')
   end
 
   describe 'happy path' do

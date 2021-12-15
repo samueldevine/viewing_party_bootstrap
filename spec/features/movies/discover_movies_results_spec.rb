@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover Movies Results' do
-  let(:bob) { User.create!(name: 'Bob Belcher', email: 'bburger@yahoo.com') }
+  let(:bob) { User.create!(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger') }
 
   describe 'movie search' do
     describe 'happy path' do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Detail Page' do
-  let(:linda) { User.create!(name: 'Linda Belcher', email: 'lbelcher@yahoo.com') }
+  let(:linda) { User.create!(name: 'Linda Belcher', email: 'lbelcher@yahoo.com', password: 'dancemom', password_confirmation: 'dancemom') }
 
   it 'shows a movie and its attributes', :vcr do
     movie = MovieFacade.movie_details(550)

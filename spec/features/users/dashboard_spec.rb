@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "A User's Dashboard" do
-  let(:bob) { User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com') }
+  let(:bob) { User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger') }
 
   describe 'User Info section' do
     it 'displays the name of the user' do
@@ -48,7 +48,7 @@ RSpec.describe "A User's Dashboard" do
     end
 
     it 'tells users if they are hosting or invited', :vcr do
-      linda = User.create!(name: 'Linda Belcher', email: 'dancingmom@yahoo.com')
+      linda = User.create!(name: 'Linda Belcher', email: 'dancingmom@yahoo.com', password: 'dancemom', password_confirmation: 'dancemom')
       party_1 = bob.viewing_parties.create!(movie_id: 550, host_id: bob.id, start_time: '18:00', date: '2022-Jan-01')
       party_1.users << linda
       party_2 = linda.viewing_parties.create!(movie_id: 551, host_id: linda.id, start_time: '18:00', date: '2022-Jan-01')
@@ -65,7 +65,7 @@ RSpec.describe "A User's Dashboard" do
     end
 
     it "doesn't dispaly information about other users' parties that I haven't been invited to" do
-      linda = User.create!(name: 'Linda Belcher', email: 'dancingmom@yahoo.com')
+      linda = User.create!(name: 'Linda Belcher', email: 'dancingmom@yahoo.com', password: 'dancemom', password_confirmation: 'dancemom')
       party_1 = bob.viewing_parties.create!(movie_id: 550, host_id: bob.id, start_time: '18:00', date: '2022-Jan-01')
 
       visit "/users/#{linda.id}"

@@ -11,7 +11,7 @@ RSpec.describe 'The Landing Page' do
   end
 
   it 'lists all current users' do
-    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com')
+    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger')
     visit root_path
 
     within '#existing-users' do
@@ -20,7 +20,7 @@ RSpec.describe 'The Landing Page' do
   end
 
   it 'links to each users dashboard' do
-    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com')
+    bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger')
     visit root_path
 
     within '#existing-users' do
