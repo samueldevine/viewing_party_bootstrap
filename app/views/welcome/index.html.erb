@@ -10,4 +10,15 @@
       <%= button_to 'Create an account', '/register', method: :get %>
     </div>
   </div>
+
+  <div class='row text-justify p-5'>
+    <% if current_user %>
+      <h5>Existing users:</h5>
+      <% User.all.each do |user| %>
+        <div class='col-lg-4'>
+          <%= user.email %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
