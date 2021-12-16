@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   get '/register', to: 'users#new'
-  get '/login', to: 'users#login'
-  post '/login', to: 'users#login_check'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   get '/users/:id', to: 'users#dashboard'
   get '/users/:id/discover', to: 'users#discover'
