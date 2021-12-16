@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :users, only: [:create]
-
   get '/register', to: 'users#new'
+  post '/users', to: 'users#create'
+  get '/dashboard', to: 'users#dashboard'
+  get '/discover', to: 'users#discover'
+  # resources :users, only: [:create]
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
-  get 'dashboard', to: 'users#dashboard'
-  get '/discover', to: 'users#discover'
 
   get '/movies', to: 'movies#search'
   get '/movies/:movie_id', to: 'movies#detail'

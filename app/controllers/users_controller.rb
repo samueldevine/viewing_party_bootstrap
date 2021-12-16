@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < BaseController
+  skip_before_action :require_login, only: [:new, :create, :discover]
+
   def dashboard
     # @user = User.find(params[:id])
     viewing_parties = ViewingParty.find_by_user(current_user)

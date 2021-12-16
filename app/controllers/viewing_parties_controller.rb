@@ -1,4 +1,4 @@
-class ViewingPartiesController < ApplicationController
+class ViewingPartiesController < BaseController
   def new
     # @user = User.find(params[:id])
     @users = User.where.not(id: current_user.id)
