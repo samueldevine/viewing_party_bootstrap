@@ -19,7 +19,7 @@
   </div>
 
   <div class='row text-center p-3'>
-    <%= button_to "Create Viewing Party", "/users/#{params[:id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
+    <%= button_to "Create Viewing Party", "/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
   </div>
 
   <div class='row py-2'>
@@ -44,6 +44,6 @@
   </div>
 
   <div class='row text-center'>
-    <%= button_to "Back to Discover Movies", "/users/#{params[:id]}/discover", method: :get %>
+    <%= button_to "Back to Discover Movies", "/discover", method: :get %>
   </div>
 </div>

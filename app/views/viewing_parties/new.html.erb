@@ -3,7 +3,7 @@
     <h3>Create a Viewing Party for <%= @movie.title %></h3>
   </div>
 
-  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-party", method: :post, local: true do |f| %>
+  <%= form_with url: "/movies/#{@movie.id}/viewing-party", method: :post, local: true do |f| %>
     <div class='form-group'>
       <%= f.label "duration (minutes):", class: 'col-sm-4' %>
       <div class='col-sm-8'>

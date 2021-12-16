@@ -13,7 +13,7 @@ RSpec.describe 'Login Page' do
       fill_in :password, with: 'burger'
       click_on 'Log In'
 
-      expect(current_path).to eq "/users/#{@bob.id}"
+      expect(current_path).to eq "/dashboard"
     end
   end
 

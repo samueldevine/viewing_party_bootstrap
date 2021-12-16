@@ -1,7 +1,7 @@
 <div class='container text-center'>
-  <h3><%= @user.name.titleize %>'s Dashboard</h3>
+  <h3><%= current_user.name.titleize %>'s Dashboard</h3>
 
-  <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+  <%= button_to 'Discover Movies', "/discover", method: :get %>
 </div>
 
 <div id='viewing-parties'>
@@ -19,10 +19,10 @@
 
             <img src='https://image.tmdb.org/t/p/original/<%= party[1].poster_path %>'
             class="img-thumbnail w-75" alt='Poster for <%= party[1].title %>'><br>
-            <%= link_to party[1].title, "/users/#{@user.id}/movies/#{party[0].movie_id}" %><br>
+            <%= link_to party[1].title, "/movies/#{party[0].movie_id}" %><br>
             <%= party[0].date.strftime('%B %d, %Y') %><br>
             <%= party[0].start_time.strftime('%l:%M %p') %><br>
-            <% if party[0].host_id == @user.id %>
+            <% if party[0].host_id == current_user.id %>
               Hosting
             <% else %>
               Invited

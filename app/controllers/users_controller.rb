@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def dashboard
-    @user = User.find(params[:id])
-    viewing_parties = ViewingParty.find_by_user(@user)
+    # @user = User.find(params[:id])
+    viewing_parties = ViewingParty.find_by_user(current_user)
     if viewing_parties != []
       @party_details = MovieFacade.party_details(viewing_parties)
     end
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = "Account successfully created"
-      redirect_to "/users/#{user.id}"
+      redirect_to "/dashboard"
     else
       flash[:notice] = user.errors.full_messages.to_sentence
       render :new
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
   private

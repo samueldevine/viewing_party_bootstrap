@@ -6,7 +6,7 @@
   <div class="row mb-3">
     <div class="col text-center">
       <div class="form-actions">
-        <%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %>
+        <%= button_to 'Discover Page', "/discover", method: :get %>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
     <% @movies.each do |movie| %>
       <div class="row">
         <div class="col text-end">
-          <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
+          <%= link_to movie.title, "/movies/#{movie.id}" %>
         </div>
 
         <div class="col text-left">

@@ -1,27 +1,27 @@
 class ViewingPartiesController < ApplicationController
   def new
-    @user = User.find(params[:id])
-    @users = User.where.not(id: @user.id)
+    # @user = User.find(params[:id])
+    @users = User.where.not(id: current_user.id)
     @movie = MovieFacade.movie_details(params[:movie_id])
   end
 
   def create
     if params[:duration] < params[:runtime]
       flash[:notice] = "Please choose a duration longer than the movie's runtime."
-      @user = User.find(params[:id])
-      @users = User.where.not(id: @user.id)
+      # @user = User.find(params[:id])
+      @users = User.where.not(id: current_user.id)
       @movie = MovieFacade.movie_details(params[:movie_id])
       render :new
     else
-      viewing_party = ViewingParty.create!(
+      viewing_party = current_user.viewing_parties.create!(
         movie_id: params[:movie_id],
-        host_id: params[:id],
+        host_id: current_user.id,
         date: params[:date],
         start_time: params[:start_time],
         duration: params[:duration]
       )
 
-      viewing_party.users << User.find(params[:id])
+      # viewing_party.users << current_user
 
       params[:invitations].each do |inv|
         if inv[1] == "1"
@@ -29,7 +29,7 @@ class ViewingPartiesController < ApplicationController
         end
       end
 
-      redirect_to "/users/#{params[:id]}"
+      redirect_to "/dashboard"
     end
   end
 end

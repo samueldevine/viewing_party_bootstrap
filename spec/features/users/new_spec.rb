@@ -13,7 +13,7 @@ RSpec.describe "User Registration Page" do
 
       user = User.all.last
 
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end
 
