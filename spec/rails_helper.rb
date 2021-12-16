@@ -66,7 +66,7 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/support/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/support/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data('HIDE MY KEY') { ENV['movie_api_key'] }
   config.configure_rspec_metadata!

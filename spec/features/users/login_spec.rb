@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Login Page' do
   before :each do
-    @bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger', password_confirmation: 'burger')
+    @bob = User.create(name: 'Bob Belcher', email: 'bburger@yahoo.com', password: 'burger',
+                       password_confirmation: 'burger')
   end
 
   describe 'with valid info (happy path)' do
@@ -13,7 +14,7 @@ RSpec.describe 'Login Page' do
       fill_in :password, with: 'burger'
       click_on 'Log In'
 
-      expect(current_path).to eq "/dashboard"
+      expect(current_path).to eq '/dashboard'
     end
   end
 

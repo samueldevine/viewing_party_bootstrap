@@ -1,5 +1,5 @@
 class MovieRepo
-attr_reader :all
+  attr_reader :all
 
   def initialize(info)
     @all = create_movies(info[:results][0..19])

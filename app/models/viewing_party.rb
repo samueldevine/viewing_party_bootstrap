@@ -20,7 +20,7 @@ class ViewingParty < ApplicationRecord
   # validates_with DurationValidator
 
   def self.find_by_user(user_id)
-    self.joins(:user_parties)
-    .where(user_parties: { user_id: user_id })
+    joins(:user_parties)
+      .where(user_parties: { user_id: user_id })
   end
 end

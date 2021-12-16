@@ -40,8 +40,8 @@ gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'
   gem 'figaro'
+  gem 'pry'
 end
 
 group :development do
@@ -53,11 +53,11 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
-  gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
 end

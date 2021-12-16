@@ -7,7 +7,7 @@ RSpec.describe 'The Landing Page' do
     expect(page).to have_button 'Create an account'
     click_on 'Create an account'
 
-    expect(current_path).to eq "/register"
+    expect(current_path).to eq '/register'
   end
 
   it 'has a button to log in' do

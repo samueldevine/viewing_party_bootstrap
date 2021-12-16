@@ -1,12 +1,10 @@
 class UsersController < BaseController
-  skip_before_action :require_login, only: [:new, :create, :discover]
+  skip_before_action :require_login, only: %i[new create discover]
 
   def dashboard
     # @user = User.find(params[:id])
     viewing_parties = ViewingParty.find_by_user(current_user)
-    if viewing_parties != []
-      @party_details = MovieFacade.party_details(viewing_parties)
-    end
+    @party_details = MovieFacade.party_details(viewing_parties) if viewing_parties != []
   end
 
   def new
@@ -18,8 +16,8 @@ class UsersController < BaseController
 
     if user.save
       session[:user_id] = user.id
-      flash[:success] = "Account successfully created"
-      redirect_to "/dashboard"
+      flash[:success] = 'Account successfully created'
+      redirect_to '/dashboard'
     else
       flash[:notice] = user.errors.full_messages.to_sentence
       render :new

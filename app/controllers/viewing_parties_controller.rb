@@ -24,12 +24,10 @@ class ViewingPartiesController < BaseController
       # viewing_party.users << current_user
 
       params[:invitations].each do |inv|
-        if inv[1] == "1"
-          viewing_party.users << User.find(inv[0])
-        end
+        viewing_party.users << User.find(inv[0]) if inv[1] == '1'
       end
 
-      redirect_to "/dashboard"
+      redirect_to '/dashboard'
     end
   end
 end

@@ -13,7 +13,7 @@ RSpec.describe MovieService do
     describe '::get_url', :vcr do
       it 'fetches API data for a specific endpoint, and parses it' do
         url = 'movie/top_rated'
-        params = { api_key: ENV['movie_api_key']}
+        params = { api_key: ENV['movie_api_key'] }
         response = MovieService.get_url(url, params)
 
         expect(response).to be_a Hash

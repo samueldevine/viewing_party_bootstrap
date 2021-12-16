@@ -14,8 +14,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def movies
-  end
+  def movies; end
 
   def detail
     # @movie_details #==> [@movie, @cast_list, @reviews]
@@ -26,5 +25,4 @@ class MoviesController < ApplicationController
 
     @reviews = MovieFacade.reviews(params[:movie_id])
   end
-
 end
