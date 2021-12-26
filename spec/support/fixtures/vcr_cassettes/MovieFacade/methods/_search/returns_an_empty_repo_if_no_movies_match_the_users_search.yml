@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 15 Dec 2021 17:34:13 GMT
+      - Sun, 26 Dec 2021 17:56:46 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 42d4eaeaff822cf9612027ce7994d187.cloudfront.net (CloudFront)
+      - 1.1 756055f1fedb18a26f8e830f747b36d4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD51-C4
       X-Amz-Cf-Id:
-      - x7qURNiqlwxtwjiE4L9QItcr6jfnvnh-Ny-93Barl8vrNHW1Lh6EPA==
+      - LKw1o7A0m5xI5v8dd_nNyayNfLqFRv7EhTw-04A4W-n_7jDGD82JyA==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Wed, 15 Dec 2021 17:34:13 GMT
+  recorded_at: Sun, 26 Dec 2021 17:56:46 GMT
 recorded_with: VCR 6.0.0
