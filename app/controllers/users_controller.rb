@@ -25,7 +25,6 @@ class UsersController < BaseController
   end
 
   def discover
-    # @user = User.find(params[:id])
   end
 
   private

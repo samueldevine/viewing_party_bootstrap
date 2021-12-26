@@ -21,8 +21,6 @@ class ViewingPartiesController < BaseController
         duration: params[:duration]
       )
 
-      # viewing_party.users << current_user
-
       params[:invitations].each do |inv|
         viewing_party.users << User.find(inv[0]) if inv[1] == '1'
       end
