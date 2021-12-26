@@ -25,7 +25,6 @@ class ViewingPartiesController < BaseController
           viewing_party.users << User.find(inv[0]) if inv[1] == '1'
         end
       end
-
       redirect_to '/dashboard'
     end
   end
