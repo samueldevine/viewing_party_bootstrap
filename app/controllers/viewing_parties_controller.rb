@@ -8,7 +8,6 @@ class ViewingPartiesController < BaseController
   def create
     if params[:duration] < params[:runtime]
       flash[:notice] = "Please choose a duration longer than the movie's runtime."
-      # @user = User.find(params[:id])
       @users = User.where.not(id: current_user.id)
       @movie = MovieFacade.movie_details(params[:movie_id])
       render :new
@@ -21,8 +20,10 @@ class ViewingPartiesController < BaseController
         duration: params[:duration]
       )
 
-      params[:invitations].each do |inv|
-        viewing_party.users << User.find(inv[0]) if inv[1] == '1'
+      if params[:invitations]
+        params[:invitations].each do |inv|
+          viewing_party.users << User.find(inv[0]) if inv[1] == '1'
+        end
       end
 
       redirect_to '/dashboard'
